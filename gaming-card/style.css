@@ -1,0 +1,235 @@
+:root {
+    --bg-first-color: #ad5e3b;
+    --bg-second-color: #742628;
+    --bg-third-color: #4a595c;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    user-select: none;
+}
+main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+section {
+    width: 80%;
+    height: 90%;
+    margin: 70px auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .7s ease;
+    
+}
+section.bgFirstColor {
+    background-color: var(--bg-first-color);
+}
+section.bgSecondColor {
+    background-color: var(--bg-second-color);
+}
+section.bgThirdColor {
+    background-color: var(--bg-third-color);
+}
+section .container {
+    width: 100%;
+}
+section .container.container1 { 
+    height: 250px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section .container.container1 .container1-header {
+    width: 50%;  
+    text-align: center;
+}
+section .container.container1 .container1-header .header-text {
+    margin: 45px auto;
+    font-size: 45px;
+    font-weight: bold;
+    color: #170426;
+
+}
+section .container.container1 .container1-body {   
+    width: 50%;
+}
+section .container.container1 .container1-body .body-links {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 25px;
+}
+section .container.container1 .container1-body .body-links .link-item {
+    width: 164px;
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+    cursor: pointer;
+}
+section .container.container1 .container1-body .body-links .link-item:hover, section .container.container1 .container1-body .body-links .link-item.btnActive {
+    background: white;
+    box-shadow: 0 20px 40px -8px rgb(0 0 0 / 10%);
+}
+section .container.container1 .container1-body .body-links .link-item .item-circle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-right: 2px;
+}
+section .container.container1 .container1-body .body-links .link-item .item-circle .item-circle-dot {
+    width: 8px;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .5s;
+}
+section .container.container1 .container1-body .body-links .link-item:hover .item-circle .item-circle-dot {
+    background: #ad5e3b;
+}
+section .container.container1 .container1-body .body-links .link-item.btnActive .item-circle .item-circle-dot {
+    display: none;
+}
+section .container.container1 .container1-body .body-links .link-item .item-circle svg {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: relative;
+}
+section .container.container1 .container1-body .body-links .link-item.btnActive .item-circle svg {
+    display: block;
+}
+section .container.container1 .container1-body .body-links .link-item .item-circle svg circle {
+    fill: none;
+    stroke-width: 2px;
+    stroke: #ad5e3b;
+    stroke-linecap: round;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    transform: translate(20%, 20%);
+}
+section .container.container1 .container1-body .body-links .link-item .item-circle svg circle:nth-child(1) {
+    stroke-dashoffset: 0;
+    stroke: #f3f3f3;
+}
+section .container.container1 .container1-body .body-links .link-item .item-circle svg circle:nth-child(2) {
+    stroke-dashoffset: 50;
+    stroke: #ad5e3b;
+}
+section .container.container1 .container1-body .body-links .link-item .item-name {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: -0.25px;
+    transition: all .5s;
+}
+section .container.container1 .container1-body .body-links .link-item:hover .item-name, section .container.container1 .container1-body .body-links .link-item.btnActive .item-name {
+    color: #ad5e3b;
+}
+
+
+
+section .container.container2 {
+    min-height: 380px;
+    height: auto;
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+section .container.container2 .card {
+    width: 70%;
+    background: var(--bg-first-color);
+    height: auto;
+    border: 1px solid hsla(0,0%,100%,.4);
+    border-radius: 10px;
+    padding: 60px 20px 50px 50px;
+    box-shadow: 0 20px 40px -8px rgb(45 17 17 / 10%);
+}
+section .container.container2 .card .card-body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+section .container.container2 .card .card-body .card-left {
+    width: 50%;
+    height: 320px;
+}
+section .container.container2 .card .card-body .card-left .card-header-sub-title {  
+    display: none;
+}
+section .container.container2 .card .card-body .card-left .card-header-title {  
+    font-size: 40px;
+    font-weight: bold;
+}
+section .container.container2 .card .card-body .card-left .card-header-text {
+    margin-top: 30px;
+    line-height: 26px;
+    letter-spacing: 1px;
+    color: darkgray;
+    font-weight: 400;
+}
+section .container.container2 .card .card-body .card-right {
+    width: 46%;
+    margin-left: 4%;
+    height: 320px;
+}
+section .container.container2 .card .card-body .card-right .card-img-parent {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+section .container.container2 .card .card-body .card-right .card-img-parent .card-img {
+    width: 115%;
+    position: absolute;
+    top: 0px;
+}
+section .container.container2 .card.card1 {
+    background: var(--bg-first-color);
+    display: none;
+}
+section .container.container2 .card.card2 {
+    background: var(--bg-second-color);
+    display: none;
+}
+section .container.container2 .card.card3 {
+    background: var(--bg-third-color);
+    display: none;
+}
+
+
+
+.displayNone {
+    display: none;
+}
+.cardActive {
+    display: block !important;
+}

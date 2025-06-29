@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Card</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <main>
+        <section id="main-section" class="bgFirstColor">
+            <div class="container container1">
+                <div class="container1-header">
+                    <div class="header-text">GAMING CARD</div>
+                </div>
+                <div class="container1-body">
+                    <div class="body-links">
+                        <div class="link-item link-item-one btnActive" data-card="card1">
+                            <div class="item-circle">
+                                <div class="item-circle-dot"></div>
+                                <svg>
+                                    <circle cy="8" cx="8" r="8"></circle>
+                                    <circle cy="8" cx="8" r="8"></circle>
+                                </svg>
+                            </div>
+                            <div class="item-name">Uncharted</div>
+                        </div>
+                        <div class="link-item link-item-two" data-card="card2">
+                            <div class="item-circle">
+                                <div class="item-circle-dot"></div>
+                                <svg>
+                                    <circle cy="8" cx="8" r="8"></circle>
+                                    <circle cy="8" cx="8" r="8"></circle>
+                                </svg>
+                            </div>
+                            <div class="item-name">Red Dead</div>
+                        </div>
+                        <div class="link-item link-item-three" data-card="card3">
+                            <div class="item-circle">
+                                <div class="item-circle-dot"></div>
+                                <svg>
+                                    <circle cy="8" cx="8" r="8"></circle>
+                                    <circle cy="8" cx="8" r="8"></circle>
+                                </svg>
+                            </div>
+                            <div class="item-name">Mafia</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container container2">
+
+                <div class="card card1 cardActive">
+                    <div class="card-body">
+                        <div class="card-left">
+                            <div class="card-header-sub-title">Uncharted</div>
+                            <div class="card-header-title">Uncharted 4 - A Thief's End</div>
+                            <div class="card-header-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+                        </div>
+                        <div class="card-right">
+                            <div class="card-img-parent">
+                                <img src="./thumb-1920-717111.jpg" class="card-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card2">
+                    <div class="card-body">
+                        <div class="card-left">
+                            <div class="card-header-sub-title">Red Dead Redemption</div>
+                            <div class="card-header-title">Red Dead Redemption 2</div>
+                            <div class="card-header-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+                        </div>
+                        <div class="card-right">
+                            <div class="card-img-parent">
+                                <img src="./thumb-1920-958091.jpg" class="card-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card3">
+                    <div class="card-body">
+                        <div class="card-left">
+                            <div class="card-header-sub-title">Mafia</div>
+                            <div class="card-header-title">Mafia II</div>
+                            <div class="card-header-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+                        </div>
+                        <div class="card-right">
+                            <div class="card-img-parent">
+                                <img src="./thumb-1920-509156.jpg" class="card-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    
+    <!-- jQuery JS 3.1.0 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $intervalTime = 5000; // 5 seconds
+            
+            $(".link-item").on("click", function() {
+                $card = $(this).attr("data-card");
+                
+                $(this).hasClass("btnActive") ? false : $(".link-item").removeClass("btnActive");$(this).addClass("btnActive");
+
+                $("."+$card+"").hasClass("cardActive") ? false : $(".card").removeClass("cardActive");$("."+$card+"").addClass("cardActive");
+
+                ($card == "card1") ? $("#main-section").attr("class", "bgFirstColor") : ($card == "card2") ? $("#main-section").attr("class", "bgSecondColor") : ($card == "card3") ? $("#main-section").attr("class", "bgThirdColor") : false;
+
+            });
+
+
+            setInterval(function() {
+
+                if($(".link-item-one").hasClass("btnActive")) {
+                    $(".link-item-two").click();
+                }
+                else if($(".link-item-two").hasClass("btnActive")) {
+                    $(".link-item-three").click();
+                }
+                else if($(".link-item-three").hasClass("btnActive")) {
+                    $(".link-item-one").click();
+                }
+
+            }, $intervalTime);
+
+        });
+    </script>
+</body>
+</html>
